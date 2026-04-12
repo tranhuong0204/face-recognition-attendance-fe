@@ -8,7 +8,8 @@ plugins {
 android {
     namespace = "com.example.giao_dien_app"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+//    ndkVersion = flutter.ndkVersion
+    ndkVersion = "25.2.9519653"   // <-- ghi rõ version NDK bạn đã cài
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
