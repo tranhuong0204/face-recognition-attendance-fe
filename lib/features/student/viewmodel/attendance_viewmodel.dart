@@ -147,8 +147,8 @@ class AttendanceViewModel extends ChangeNotifier {
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({
           "studentId": currentStudentId,
-          "userLat": _currentPosition!.latitude,
-          "userLon": _currentPosition!.longitude,
+          "userLat": 0.1,
+          "userLon": 0.1,
           "classLat": classLoc["lat"],
           "classLon": classLoc["lon"],
           "radius": classLoc["radius"],
