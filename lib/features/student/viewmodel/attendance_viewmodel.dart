@@ -267,7 +267,7 @@ class AttendanceViewModel extends ChangeNotifier {
 
         print("FaceResponse: $name - $confidence - $message");
 
-        if (name == "Unknown" || confidence < 0.6) {
+        if (name == "Unknown") {
           // hiện thông báo lỗi cho người dùng
           throw Exception(message);
         } else {
