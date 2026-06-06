@@ -302,6 +302,18 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                   if (success && context.mounted) {
                     _showSuccessDialog(context);
                   }
+
+                  // final result = await context.read<AttendanceViewModel>().checkIn(
+                  //   sessionId: realSessionId,
+                  //   classId: _resolveClassId(),
+                  //   fallbackLocationId: _latestLocationId,
+                  //   studentId: currentStudentId,
+                  // );
+                  //
+                  // if (result['success'] == true && context.mounted) {
+                  //   _showSuccessDialog(context, result['confidence']);
+                  // }
+
                 } catch (e) {
                   if (context.mounted) {
                     _showFailureDialog(
@@ -361,6 +373,35 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
       ),
     );
   }
+
+  // void _showSuccessDialog(BuildContext context, double confidence) {
+  //   showDialog(
+  //     context: context,
+  //     barrierDismissible: false,
+  //     builder: (ctx) => AlertDialog(
+  //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+  //       title: const Icon(Icons.check_circle, color: Colors.green, size: 80),
+  //       content: Text(
+  //         'Điểm danh thành công!\n'
+  //             'Độ tương đồng khuôn mặt: ${(confidence * 100).toStringAsFixed(2)}%',
+  //         textAlign: TextAlign.center,
+  //         style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+  //       ),
+  //       actions: [
+  //         Center(
+  //           child: ElevatedButton(
+  //             onPressed: () {
+  //               Navigator.pop(ctx);
+  //               Navigator.pop(context);
+  //             },
+  //             child: const Text('ĐÓNG'),
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
+
 
   void _showFailureDialog(BuildContext context, String errorMsg) {
     showDialog(
